@@ -57,10 +57,10 @@
     //  the communication between the Arduino and it's communications chip.
 	typedef struct dataForController_t
 	{
-		uint8_t triangleOn : 1;  // Each of these member variables
-		uint8_t circleOn : 1;    //  control if a button is off or on
-		uint8_t squareOn : 1;    // For the buttons, 
-		uint8_t crossOn : 1;     //  0 is off
+		uint8_t buttonXOn : 1;  // Each of these member variables
+		uint8_t buttonAOn : 1;    //  control if a button is off or on
+		uint8_t buttonYOn : 1;    // For the buttons, 
+		uint8_t buttonBOn : 1;     //  0 is off
 		uint8_t l1On : 1;        //  1 is on
 		uint8_t l2On : 1;        
 		uint8_t l3On : 1;        // The : 1 here just tells the compiler
@@ -202,10 +202,10 @@
     // Create a dataForController_t
     dataForController_t controllerData;
     // Make the buttons zero
-    controllerData.triangleOn = 0;
-    controllerData.circleOn = 0;
-    controllerData.squareOn = 0;
-    controllerData.crossOn = 0;
+    controllerData.buttonXOn = 0;
+    controllerData.buttonAOn = 0;
+    controllerData.buttonYOn = 0;
+    controllerData.buttonBOn = 0;
     controllerData.l1On = 0;
     controllerData.l2On = 0;
     controllerData.l3On = 0;

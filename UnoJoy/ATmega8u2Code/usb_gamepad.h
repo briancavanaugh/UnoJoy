@@ -19,10 +19,10 @@ uint8_t usb_configured(void);		// is the USB port configured
 typedef struct {
 	// digital buttons, 0 = off, 1 = on
 
-	uint8_t square_btn : 1;
-	uint8_t cross_btn : 1;
-	uint8_t circle_btn : 1;
-	uint8_t triangle_btn : 1;
+	uint8_t buttonY_btn : 1;
+	uint8_t buttonB_btn : 1;
+	uint8_t buttonA_btn : 1;
+	uint8_t buttonX_btn : 1;
 
 	uint8_t l1_btn : 1;
 	uint8_t r1_btn : 1;
@@ -62,10 +62,10 @@ typedef struct {
 
 	// button axis, 0x00 = unpressed, 0xff = fully pressed
 
-	uint8_t triangle_axis;
-	uint8_t circle_axis;
-	uint8_t cross_axis;
-	uint8_t square_axis;
+	uint8_t buttonX_axis;
+	uint8_t buttonA_axis;
+	uint8_t buttonB_axis;
+	uint8_t buttonY_axis;
 
 	uint8_t l1_axis;
 	uint8_t r1_axis;

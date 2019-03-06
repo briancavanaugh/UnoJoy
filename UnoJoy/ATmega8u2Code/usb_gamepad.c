@@ -279,13 +279,13 @@ static const struct descriptor_list_struct {
 static volatile uint8_t usb_configuration = 0;
 
 static const gamepad_state_t PROGMEM gamepad_idle_state = {
-	.triangle_btn = 0, .square_btn = 0, .cross_btn = 0, .circle_btn = 0,
+	.buttonX_btn = 0, .buttonY_btn = 0, .buttonB_btn = 0, .buttonA_btn = 0,
 	.l1_btn = 0, .r1_btn = 0, .l2_btn = 0, .r2_btn = 0,
 	.select_btn = 0, .start_btn = 0, .l3_btn = 0, .r3_btn = 0, .ps_btn = 0,
 	.direction = 0x08,
 	.l_x_axis = 0x80, .l_y_axis = 0x80, .r_x_axis = 0x80, .r_y_axis = 0x80,
 	.up_axis = 0x00, .right_axis = 0x00, .down_axis = 0x00, .left_axis = 0x00,
-	.circle_axis = 0x00, .cross_axis = 0x00, .square_axis = 0x00, .triangle_axis = 0x00,
+	.buttonA_axis = 0x00, .buttonB_axis = 0x00, .buttonY_axis = 0x00, .buttonX_axis = 0x00,
 	.l1_axis = 0x00, .r1_axis = 0x00, .l2_axis = 0x00, .r2_axis = 0x00
 };
 
@@ -352,10 +352,10 @@ inline void usb_gamepad_reset_state(void) {
 //  a return code (zero if no problems, one if problems
 int8_t sendPS3Data(dataForController_t btnList){
 	
-	gamepad_state.triangle_btn = btnList.triangleOn;//Button 4
-	gamepad_state.square_btn = btnList.squareOn;	
-	gamepad_state.cross_btn = btnList.crossOn;
-	gamepad_state.circle_btn = btnList.circleOn;
+	gamepad_state.buttonX_btn = btnList.buttonXOn;//Button 4
+	gamepad_state.buttonY_btn = btnList.buttonYOn;	
+	gamepad_state.buttonB_btn = btnList.buttonBOn;
+	gamepad_state.buttonA_btn = btnList.buttonAOn;
 
 	gamepad_state.l1_btn = btnList.l1On;
 	gamepad_state.r1_btn = btnList.r1On;
@@ -363,25 +363,25 @@ int8_t sendPS3Data(dataForController_t btnList){
 	gamepad_state.r2_btn = btnList.r2On;
 		
 	
-	if (gamepad_state.triangle_btn == 1)
-		gamepad_state.triangle_axis = 0xFF;
+	if (gamepad_state.buttonX_btn == 1)
+		gamepad_state.buttonX_axis = 0xFF;
 	else
-		gamepad_state.triangle_axis = 0;
+		gamepad_state.buttonX_axis = 0;
 		
-	if (gamepad_state.square_btn == 1)
-		gamepad_state.square_axis = 0xFF;
+	if (gamepad_state.buttonY_btn == 1)
+		gamepad_state.buttonY_axis = 0xFF;
 	else
-		gamepad_state.square_axis = 0;
+		gamepad_state.buttonY_axis = 0;
 
-	if (gamepad_state.cross_btn == 1)
-		gamepad_state.cross_axis = 0xFF;
+	if (gamepad_state.buttonB_btn == 1)
+		gamepad_state.buttonB_axis = 0xFF;
 	else
-		gamepad_state.cross_axis = 0;
+		gamepad_state.buttonB_axis = 0;
 
-	if (gamepad_state.circle_btn == 1)
-		gamepad_state.circle_axis = 0xFF;
+	if (gamepad_state.buttonA_btn == 1)
+		gamepad_state.buttonA_axis = 0xFF;
 	else
-		gamepad_state.circle_axis = 0;
+		gamepad_state.buttonA_axis = 0;
 
 	if (gamepad_state.l1_btn == 1)
 		gamepad_state.l1_axis = 0xFF;

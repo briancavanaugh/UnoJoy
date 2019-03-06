@@ -37,10 +37,10 @@ dataForController_t getControllerData(void){
   // Since our buttons are all held high and
   //  pulled low when pressed, we use the "!"
   //  operator to invert the readings from the pins
-  controllerData.triangleOn = !digitalRead(2);
-  controllerData.circleOn = !digitalRead(3);
-  controllerData.squareOn = !digitalRead(4);
-  controllerData.crossOn = !digitalRead(5);
+  controllerData.buttonXOn = !digitalRead(2);
+  controllerData.buttonAOn = !digitalRead(3);
+  controllerData.buttonYOn = !digitalRead(4);
+  controllerData.buttonBOn = !digitalRead(5);
   controllerData.dpadUpOn = !digitalRead(6);
   controllerData.dpadDownOn = !digitalRead(7);
   controllerData.dpadLeftOn = !digitalRead(8);

@@ -22,10 +22,10 @@ typedef struct physicalButtonList_t{
 	uint8_t startOn;
 	uint8_t r2On;
 	uint8_t r1On;
-	uint8_t triangleOn;
-	uint8_t circleOn;
-	uint8_t squareOn;
-	uint8_t crossOn;
+	uint8_t buttonXOn;
+	uint8_t buttonAOn;
+	uint8_t buttonYOn;
+	uint8_t buttonBOn;
 	uint8_t l1On;
 	uint8_t l2On;
 	uint8_t selectOn;

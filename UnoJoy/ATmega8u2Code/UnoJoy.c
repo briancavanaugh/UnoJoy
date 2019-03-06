@@ -195,10 +195,10 @@ int main(void) {
 		
 		// Now, we take the button data we got in and input that information
         //  into our controller data we want to send
-		dataToSend.triangleOn = 1 & (buttonData1 >> 0);
-		dataToSend.circleOn = 1 & (buttonData1 >> 1);
-		dataToSend.squareOn = 1 & (buttonData1 >> 2);
-		dataToSend.crossOn = 1 & (buttonData1 >> 3);
+		dataToSend.buttonXOn = 1 & (buttonData1 >> 0);
+		dataToSend.buttonAOn = 1 & (buttonData1 >> 1);
+		dataToSend.buttonYOn = 1 & (buttonData1 >> 2);
+		dataToSend.buttonBOn = 1 & (buttonData1 >> 3);
 		dataToSend.l1On = 1 & (buttonData1 >> 4);
 		dataToSend.l2On = 1 & (buttonData1 >> 5);
 		dataToSend.l3On = 1 & (buttonData1 >> 6);

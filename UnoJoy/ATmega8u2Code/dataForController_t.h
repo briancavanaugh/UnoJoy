@@ -15,10 +15,10 @@
 
 	typedef struct dataForController_t
 	{
-		uint8_t triangleOn : 1;  // variables to abstractly tell us which buttons are pressed		
-		uint8_t circleOn : 1;
-		uint8_t squareOn : 1;
-		uint8_t crossOn : 1;
+		uint8_t buttonXOn : 1;  // variables to abstractly tell us which buttons are pressed		
+		uint8_t buttonAOn : 1;
+		uint8_t buttonYOn : 1;
+		uint8_t buttonBOn : 1;
 		uint8_t l1On : 1;
 		uint8_t l2On : 1;
 		uint8_t l3On : 1;
