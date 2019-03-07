@@ -24,13 +24,13 @@ typedef struct {
 	uint8_t buttonA_btn : 1;
 	uint8_t buttonX_btn : 1;
 
-	uint8_t l1_btn : 1;
-	uint8_t r1_btn : 1;
-	uint8_t l2_btn : 1;
-	uint8_t r2_btn : 1;
+	uint8_t buttonL1_btn : 1;
+	uint8_t buttonR1_btn : 1;
+	uint8_t buttonL2_btn : 1;
+	uint8_t buttonR2_btn : 1;
 
-	uint8_t select_btn : 1;
-	uint8_t start_btn : 1;
+	uint8_t buttonSelect_btn : 1;
+	uint8_t buttonStart_btn : 1;
 	uint8_t l3_btn : 1;
 	uint8_t r3_btn : 1;
 	
@@ -67,10 +67,10 @@ typedef struct {
 	uint8_t buttonB_axis;
 	uint8_t buttonY_axis;
 
-	uint8_t l1_axis;
-	uint8_t r1_axis;
-	uint8_t l2_axis;
-	uint8_t r2_axis;
+	uint8_t buttonL1_axis;
+	uint8_t buttonR1_axis;
+	uint8_t buttonL2_axis;
+	uint8_t buttonR2_axis;
 } gamepad_state_t;
 
 extern gamepad_state_t gamepad_state;

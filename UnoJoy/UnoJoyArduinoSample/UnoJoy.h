@@ -61,15 +61,15 @@
 		uint8_t buttonAOn : 1;    //  control if a button is off or on
 		uint8_t buttonYOn : 1;    // For the buttons, 
 		uint8_t buttonBOn : 1;     //  0 is off
-		uint8_t l1On : 1;        //  1 is on
-		uint8_t l2On : 1;        
+		uint8_t buttonL1On : 1;        //  1 is on
+		uint8_t buttonL2On : 1;        
 		uint8_t l3On : 1;        // The : 1 here just tells the compiler
-		uint8_t r1On : 1;        //  to only have 1 bit for each variable.
+		uint8_t buttonR1On : 1;        //  to only have 1 bit for each variable.
                                  //  This saves a lot of space for our type!
-		uint8_t r2On : 1;
+		uint8_t buttonR2On : 1;
 		uint8_t r3On : 1;
-		uint8_t selectOn : 1;
-		uint8_t startOn : 1;
+		uint8_t buttonSelectOn : 1;
+		uint8_t buttonStartOn : 1;
 		uint8_t homeOn : 1;
 		uint8_t dpadLeftOn : 1;
 		uint8_t dpadUpOn : 1;
@@ -206,18 +206,18 @@
     controllerData.buttonAOn = 0;
     controllerData.buttonYOn = 0;
     controllerData.buttonBOn = 0;
-    controllerData.l1On = 0;
-    controllerData.l2On = 0;
+    controllerData.buttonL1On = 0;
+    controllerData.buttonL2On = 0;
     controllerData.l3On = 0;
-    controllerData.r1On = 0;
-    controllerData.r2On = 0;
+    controllerData.buttonR1On = 0;
+    controllerData.buttonR2On = 0;
     controllerData.r3On = 0;
     controllerData.dpadLeftOn = 0;
     controllerData.dpadUpOn = 0;
     controllerData.dpadRightOn = 0;
     controllerData.dpadDownOn = 0;  
-    controllerData.selectOn = 0;
-    controllerData.startOn = 0;
+    controllerData.buttonSelectOn = 0;
+    controllerData.buttonStartOn = 0;
     controllerData.homeOn = 0;
     //Set the sticks to 128 - centered
     controllerData.leftStickX = 128;

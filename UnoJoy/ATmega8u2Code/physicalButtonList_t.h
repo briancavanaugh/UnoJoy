@@ -19,16 +19,16 @@
 //  on the controller itself
 typedef struct physicalButtonList_t{
 	uint8_t r3On;
-	uint8_t startOn;
-	uint8_t r2On;
-	uint8_t r1On;
+	uint8_t buttonStartOn;
+	uint8_t buttonR2On;
+	uint8_t buttonR1On;
 	uint8_t buttonXOn;
 	uint8_t buttonAOn;
 	uint8_t buttonYOn;
 	uint8_t buttonBOn;
-	uint8_t l1On;
-	uint8_t l2On;
-	uint8_t selectOn;
+	uint8_t buttonL1On;
+	uint8_t buttonL2On;
+	uint8_t buttonSelectOn;
 	uint8_t dpadDownOn;
 	uint8_t dpadRightOn;
 	uint8_t dpadLeftOn;

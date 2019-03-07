@@ -199,15 +199,15 @@ int main(void) {
 		dataToSend.buttonAOn = 1 & (buttonData1 >> 1);
 		dataToSend.buttonYOn = 1 & (buttonData1 >> 2);
 		dataToSend.buttonBOn = 1 & (buttonData1 >> 3);
-		dataToSend.l1On = 1 & (buttonData1 >> 4);
-		dataToSend.l2On = 1 & (buttonData1 >> 5);
+		dataToSend.buttonL1On = 1 & (buttonData1 >> 4);
+		dataToSend.buttonL2On = 1 & (buttonData1 >> 5);
 		dataToSend.l3On = 1 & (buttonData1 >> 6);
-		dataToSend.r1On = 1 & (buttonData1 >> 7);
+		dataToSend.buttonR1On = 1 & (buttonData1 >> 7);
 		
-		dataToSend.r2On = 1 & (buttonData2 >> 0);
+		dataToSend.buttonR2On = 1 & (buttonData2 >> 0);
 		dataToSend.r3On = 1 & (buttonData2 >> 1);
-		dataToSend.selectOn = 1 & (buttonData2 >> 2);
-		dataToSend.startOn = 1 & (buttonData2 >> 3);
+		dataToSend.buttonSelectOn = 1 & (buttonData2 >> 2);
+		dataToSend.buttonStartOn = 1 & (buttonData2 >> 3);
 		dataToSend.homeOn = 1 & (buttonData2 >> 4);
 		dataToSend.dpadLeftOn = 1 & (buttonData2 >> 5);
 		dataToSend.dpadUpOn = 1 & (buttonData2 >> 6);

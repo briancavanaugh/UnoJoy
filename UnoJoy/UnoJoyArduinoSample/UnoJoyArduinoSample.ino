@@ -45,10 +45,10 @@ dataForController_t getControllerData(void){
   controllerData.dpadDownOn = !digitalRead(7);
   controllerData.dpadLeftOn = !digitalRead(8);
   controllerData.dpadRightOn = !digitalRead(9);
-  controllerData.l1On = !digitalRead(10);
-  controllerData.r1On = !digitalRead(11);
-  controllerData.selectOn = !digitalRead(12);
-  controllerData.startOn = !digitalRead(A4);
+  controllerData.buttonL1On = !digitalRead(10);
+  controllerData.buttonR1On = !digitalRead(11);
+  controllerData.buttonSelectOn = !digitalRead(12);
+  controllerData.buttonStartOn = !digitalRead(A4);
   controllerData.homeOn = !digitalRead(A5);
   
   // Set the analog sticks

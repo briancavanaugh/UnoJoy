@@ -19,15 +19,15 @@
 		uint8_t buttonAOn : 1;
 		uint8_t buttonYOn : 1;
 		uint8_t buttonBOn : 1;
-		uint8_t l1On : 1;
-		uint8_t l2On : 1;
+		uint8_t buttonL1On : 1;
+		uint8_t buttonL2On : 1;
 		uint8_t l3On : 1;
-		uint8_t r1On : 1;
+		uint8_t buttonR1On : 1;
 		
-		uint8_t r2On : 1;
+		uint8_t buttonR2On : 1;
 		uint8_t r3On : 1;
-		uint8_t selectOn : 1;
-		uint8_t startOn : 1;
+		uint8_t buttonSelectOn : 1;
+		uint8_t buttonStartOn : 1;
 		uint8_t homeOn : 1;
 		uint8_t dpadLeftOn : 1;
 		uint8_t dpadUpOn : 1;
