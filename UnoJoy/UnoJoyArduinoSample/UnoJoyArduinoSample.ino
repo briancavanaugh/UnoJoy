@@ -51,6 +51,10 @@ dataForController_t getControllerData(void){
   controllerData.buttonStartOn = !digitalRead(A4);
   controllerData.homeOn = !digitalRead(A5);
   
+  controllerData.keypad1On = !digitalRead(9);
+  controllerData.keypad2On = !digitalRead(10);
+  controllerData.keypad3On = !digitalRead(11);
+  
   // Set the analog sticks
   //  Since analogRead(pin) returns a 10 bit value,
   //  we need to perform a bit shift operation to

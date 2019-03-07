@@ -34,6 +34,10 @@
 		uint8_t dpadRightOn : 1;
 		
 		uint8_t dpadDownOn : 1;
+		uint8_t keypad1On : 1;
+		uint8_t keypad2On : 1;
+		uint8_t keypad3On : 1;
+		
 		uint8_t leftStickX : 8; 
 		uint8_t leftStickY : 8;
 		uint8_t rightStickX : 8;

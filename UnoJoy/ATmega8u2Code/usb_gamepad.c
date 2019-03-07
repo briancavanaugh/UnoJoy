@@ -54,7 +54,7 @@
 
 // You can change these to give your code its own name.
 #define STR_MANUFACTURER	L"OpenChord X RMIT Exertion Games Lab"
-#define STR_PRODUCT			L"UnoJoy Joystick"
+#define STR_PRODUCT			L"UnoJoy Player 1"
 //#define STR_MANUFACTURER	L"SEGA"
 //#define STR_PRODUCT		L"VIRTUA STICK High Grade"
 
@@ -136,12 +136,12 @@ static const uint8_t PROGMEM gamepad_hid_report_desc[] = {
 	0x35, 0x00,        //   PHYSICAL_MINIMUM (0)
 	0x45, 0x01,        //   PHYSICAL_MAXIMUM (1)
 	0x75, 0x01,        //   REPORT_SIZE (1)
-	0x95, 0x0e,        //   REPORT_COUNT (13)
+	0x95, 0x0f,        //   REPORT_COUNT (13)
 	0x05, 0x09,        //   USAGE_PAGE (Button)
 	0x19, 0x01,        //   USAGE_MINIMUM (Button 1)
-	0x29, 0x0e,        //   USAGE_MAXIMUM (Button 13)
+	0x29, 0x0f,        //   USAGE_MAXIMUM (Button 13)
 	0x81, 0x02,        //   INPUT (Data,Var,Abs)
-	0x95, 0x02,        //   REPORT_COUNT (3)
+	0x95, 0x01,        //   REPORT_COUNT (3)
 	0x81, 0x01,        //   INPUT (Cnst,Ary,Abs)
 	0x05, 0x01,        //   USAGE_PAGE (Generic Desktop)
 	0x25, 0x07,        //   LOGICAL_MAXIMUM (7)
@@ -281,7 +281,7 @@ static volatile uint8_t usb_configuration = 0;
 static const gamepad_state_t PROGMEM gamepad_idle_state = {
 	.buttonX_btn = 0, .buttonY_btn = 0, .buttonB_btn = 0, .buttonA_btn = 0,
 	.buttonL1_btn = 0, .buttonR1_btn = 0, .buttonL2_btn = 0, .buttonR2_btn = 0,
-	.buttonSelect_btn = 0, .buttonStart_btn = 0, .l3_btn = 0, .r3_btn = 0, .ps_btn = 0,
+	.buttonSelect_btn = 0, .buttonStart_btn = 0, .keypad1_btn = 0, .keypad2_btn = 0, .keypad3_btn = 0,
 	.direction = 0x08,
 	.l_x_axis = 0x80, .l_y_axis = 0x80, .r_x_axis = 0x80, .r_y_axis = 0x80,
 	.up_axis = 0x00, .right_axis = 0x00, .down_axis = 0x00, .left_axis = 0x00,
@@ -405,12 +405,15 @@ int8_t sendPS3Data(dataForController_t btnList){
 		
 	gamepad_state.buttonSelect_btn = btnList.buttonSelectOn;
 	gamepad_state.buttonStart_btn = btnList.buttonStartOn;
-	gamepad_state.l3_btn = btnList.l3On;
-	gamepad_state.r3_btn = btnList.r3On;
+	//gamepad_state.l3_btn = btnList.l3On;
+	//gamepad_state.r3_btn = btnList.r3On;
 	
 	//gamepad_state.r2_btn_alt = btnList.r2On;
 	//gamepad_state.l2_btn_alt = btnList.l2On;
-	gamepad_state.ps_btn = btnList.homeOn;
+	//gamepad_state.ps_btn = btnList.homeOn;
+	gamepad_state.keypad1_btn = btnList.keypad1On;
+	gamepad_state.keypad2_btn = btnList.keypad2On;
+	gamepad_state.keypad3_btn = btnList.keypad3On;
 
 	// digital direction, use the dir_* constants(enum)
 	// 8 = center, 0 = up, 1 = up/right, 2 = right, 3 = right/down

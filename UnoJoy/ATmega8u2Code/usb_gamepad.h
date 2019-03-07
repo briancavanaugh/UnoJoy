@@ -31,13 +31,16 @@ typedef struct {
 
 	uint8_t buttonSelect_btn : 1;
 	uint8_t buttonStart_btn : 1;
-	uint8_t l3_btn : 1;
-	uint8_t r3_btn : 1;
+	//uint8_t l3_btn : 1;
+	//uint8_t r3_btn : 1;
 	
-	uint8_t ps_btn : 1;
+	//uint8_t ps_btn : 1;
 //	uint8_t l2_btn_alt : 1;
 	
 //	uint8_t r2_btn_alt : 1;
+	uint8_t keypad1_btn : 1;
+	uint8_t keypad2_btn : 1;
+	uint8_t keypad3_btn : 1;
 	uint8_t : 2;
 
 	// digital direction, use the dir_* constants(enum)

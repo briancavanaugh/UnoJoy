@@ -214,6 +214,9 @@ int main(void) {
 		dataToSend.dpadRightOn = 1 & (buttonData2 >> 7);
 		
 		dataToSend.dpadDownOn = 1 & (buttonData3 >> 0);
+		dataToSend.keypad1On = 1 & (buttonData3 >> 1);
+		dataToSend.keypad2On = 1 & (buttonData3 >> 2);
+		dataToSend.keypad3On = 1 & (buttonData3 >> 3);
 		
         
         // Finally, we send the data out via the USB port

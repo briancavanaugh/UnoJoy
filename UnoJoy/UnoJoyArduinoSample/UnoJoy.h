@@ -76,7 +76,10 @@
 		uint8_t dpadRightOn : 1;
 
 		uint8_t dpadDownOn : 1;
-        uint8_t padding : 7;     // We end with 7 bytes of padding to make sure we get our data aligned in bytes
+		uint8_t keypad1On : 1;
+    uint8_t keypad2On : 1;
+    uint8_t keypad3On : 1;
+    uint8_t padding : 4;     // We end with 7 bytes of padding to make sure we get our data aligned in bytes
                                  
 		uint8_t leftStickX : 8;  // Each of the analog stick values can range from 0 to 255
 		uint8_t leftStickY : 8;  //  0 is fully left or up
