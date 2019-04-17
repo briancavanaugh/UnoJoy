@@ -157,6 +157,7 @@ int main(void) {
 	char buttonData1;
 	char buttonData2;
 	char buttonData3;
+	char buttonData4;
 
 	while (1) {
 		// Delay so we're not going too fast
@@ -180,43 +181,53 @@ int main(void) {
 		buttonData3 = serialRead(25);
         
 		serialWrite(3);
+		buttonData4 = serialRead(25);
+		
+		serialWrite(4);
 		dataToSend.leftStickX = serialRead(25);
         
-		serialWrite(4);
+		serialWrite(5);
 		dataToSend.leftStickY = serialRead(25);
         
-		serialWrite(5);
+		serialWrite(6);
 		dataToSend.rightStickX = serialRead(25);
         
-		serialWrite(6);
+		serialWrite(7);
 		dataToSend.rightStickY= serialRead(25);
 		
 		LEDoff(TXLED);
 		
 		// Now, we take the button data we got in and input that information
         //  into our controller data we want to send
-		dataToSend.buttonXOn = 1 & (buttonData1 >> 0);
+		dataToSend.buttonBOn = 1 & (buttonData1 >> 0);
 		dataToSend.buttonAOn = 1 & (buttonData1 >> 1);
 		dataToSend.buttonYOn = 1 & (buttonData1 >> 2);
-		dataToSend.buttonBOn = 1 & (buttonData1 >> 3);
+		dataToSend.buttonXOn = 1 & (buttonData1 >> 3);
 		dataToSend.buttonL1On = 1 & (buttonData1 >> 4);
-		dataToSend.buttonL2On = 1 & (buttonData1 >> 5);
-		dataToSend.l3On = 1 & (buttonData1 >> 6);
-		dataToSend.buttonR1On = 1 & (buttonData1 >> 7);
+		dataToSend.buttonR1On = 1 & (buttonData1 >> 5);
+		dataToSend.buttonL2On = 1 & (buttonData1 >> 6);		
+		dataToSend.buttonR2On = 1 & (buttonData1 >> 7);
 		
-		dataToSend.buttonR2On = 1 & (buttonData2 >> 0);
-		dataToSend.r3On = 1 & (buttonData2 >> 1);
-		dataToSend.buttonSelectOn = 1 & (buttonData2 >> 2);
-		dataToSend.buttonStartOn = 1 & (buttonData2 >> 3);
-		dataToSend.homeOn = 1 & (buttonData2 >> 4);
-		dataToSend.dpadLeftOn = 1 & (buttonData2 >> 5);
-		dataToSend.dpadUpOn = 1 & (buttonData2 >> 6);
-		dataToSend.dpadRightOn = 1 & (buttonData2 >> 7);
+		dataToSend.buttonSelectOn = 1 & (buttonData2 >> 0);
+		dataToSend.buttonStartOn = 1 & (buttonData2 >> 1);
+		dataToSend.dpadLeftOn = 1 & (buttonData2 >> 2);
+		dataToSend.dpadUpOn = 1 & (buttonData2 >> 3);
+		dataToSend.dpadRightOn = 1 & (buttonData2 >> 4);		
+		dataToSend.dpadDownOn = 1 & (buttonData2 >> 5);
+		dataToSend.keypad1On = 1 & (buttonData2 >> 6);
+		dataToSend.keypad2On = 1 & (buttonData2 >> 7);
 		
-		dataToSend.dpadDownOn = 1 & (buttonData3 >> 0);
-		dataToSend.keypad1On = 1 & (buttonData3 >> 1);
-		dataToSend.keypad2On = 1 & (buttonData3 >> 2);
-		dataToSend.keypad3On = 1 & (buttonData3 >> 3);
+		dataToSend.keypad3On = 1 & (buttonData3 >> 0);
+		dataToSend.keypad4On = 1 & (buttonData3 >> 1);
+		dataToSend.keypad5On = 1 & (buttonData3 >> 2);
+		dataToSend.keypad6On = 1 & (buttonData3 >> 3);
+		dataToSend.keypad7On = 1 & (buttonData3 >> 4);		
+		dataToSend.keypad8On = 1 & (buttonData3 >> 5);
+		dataToSend.keypad9On = 1 & (buttonData3 >> 6);
+		dataToSend.keypadCOn = 1 & (buttonData3 >> 7);
+		
+		dataToSend.keypad0On = 1 & (buttonData4 >> 0);
+		dataToSend.keypadEOn = 1 & (buttonData4 >> 1);
 		
         
         // Finally, we send the data out via the USB port

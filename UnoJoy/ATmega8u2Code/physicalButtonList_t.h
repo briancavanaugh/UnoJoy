@@ -18,49 +18,36 @@
 // This one is an abstract representation of what physical buttons we have
 //  on the controller itself
 typedef struct physicalButtonList_t{
-	//uint8_t r3On;
-	uint8_t buttonStartOn;
-	uint8_t buttonR2On;
-	uint8_t buttonR1On;
-	uint8_t buttonXOn;
+	uint8_t buttonBOn;
 	uint8_t buttonAOn;
 	uint8_t buttonYOn;
-	uint8_t buttonBOn;
+	uint8_t buttonXOn;
 	uint8_t buttonL1On;
+	uint8_t buttonR1On;
 	uint8_t buttonL2On;
+	uint8_t buttonR2On;
 	uint8_t buttonSelectOn;
-	uint8_t dpadDownOn;
-	uint8_t dpadRightOn;
-	uint8_t dpadLeftOn;
-	uint8_t dpadUpOn;
-	//uint8_t menuOn;	
-	
-	uint8_t leftStickX;
-	uint8_t leftStickY;
-	//uint8_t rightStickX;
-	//uint8_t rightStickY;
-	
-	//uint8_t joy3X;
-	//uint8_t joy3Y;
-	//uint8_t joy4X;
-	//uint8_t joy4Y;
-	
-	//uint8_t l3On;
-	//uint8_t joy3ButtonOn;
-	//uint8_t joy4ButtonOn;
-	//uint8_t handsFree1;
-	//uint8_t handsFree2;
-	//uint8_t handsFree3;
-	//uint8_t handsFree4;
-	//uint8_t buttonBelowLStick;
-	//uint8_t buttonBelowRStick;
-	//uint8_t sipSwitch;
-	//uint8_t puffSwitch;
-	//uint8_t programButtonOn;
+	uint8_t buttonStartOn;
 	
 	uint8_t keypad1On;
 	uint8_t keypad2On;
 	uint8_t keypad3On;
+	uint8_t keypad4On;
+	uint8_t keypad5On;
+	uint8_t keypad6On;
+	uint8_t keypad7On;
+	uint8_t keypad8On;
+	uint8_t keypad9On;
+	uint8_t keypadCOn;
+	uint8_t keypad0On;
+	uint8_t keypadEOn;
 	
+	uint8_t dpadUpOn;
+	uint8_t dpadDownOn;
+	uint8_t dpadLeftOn;
+	uint8_t dpadRightOn;
+	
+	uint8_t leftStickX;
+	uint8_t leftStickY;
 } physicalButtonList_t;
 #endif // PHYSICAL_BUTTON_LIST_T

@@ -57,29 +57,36 @@
     //  the communication between the Arduino and it's communications chip.
 	typedef struct dataForController_t
 	{
-		uint8_t buttonXOn : 1;  // Each of these member variables
+		uint8_t buttonBOn : 1;  // Each of these member variables
 		uint8_t buttonAOn : 1;    //  control if a button is off or on
 		uint8_t buttonYOn : 1;    // For the buttons, 
-		uint8_t buttonBOn : 1;     //  0 is off
+		uint8_t buttonXOn : 1;     //  0 is off
 		uint8_t buttonL1On : 1;        //  1 is on
-		uint8_t buttonL2On : 1;        
-		uint8_t l3On : 1;        // The : 1 here just tells the compiler
-		uint8_t buttonR1On : 1;        //  to only have 1 bit for each variable.
+		uint8_t buttonR1On : 1;        
+		uint8_t buttonL2On : 1;        // The : 1 here just tells the compiler
+		uint8_t buttonR2On : 1;        //  to only have 1 bit for each variable.
                                  //  This saves a lot of space for our type!
-		uint8_t buttonR2On : 1;
-		uint8_t r3On : 1;
 		uint8_t buttonSelectOn : 1;
 		uint8_t buttonStartOn : 1;
-		uint8_t homeOn : 1;
 		uint8_t dpadLeftOn : 1;
 		uint8_t dpadUpOn : 1;
 		uint8_t dpadRightOn : 1;
-
 		uint8_t dpadDownOn : 1;
 		uint8_t keypad1On : 1;
     uint8_t keypad2On : 1;
+
     uint8_t keypad3On : 1;
-    uint8_t padding : 4;     // We end with 7 bytes of padding to make sure we get our data aligned in bytes
+    uint8_t keypad4On : 1;
+    uint8_t keypad5On : 1;
+    uint8_t keypad6On : 1;
+    uint8_t keypad7On : 1;
+    uint8_t keypad8On : 1;
+    uint8_t keypad9On : 1;
+    uint8_t keypadCOn : 1;
+    
+    uint8_t keypad0On : 1;
+    uint8_t keypadEOn : 1;
+    uint8_t padding : 6;     // We end with 7 bytes of padding to make sure we get our data aligned in bytes
                                  
 		uint8_t leftStickX : 8;  // Each of the analog stick values can range from 0 to 255
 		uint8_t leftStickY : 8;  //  0 is fully left or up
@@ -205,23 +212,36 @@
     // Create a dataForController_t
     dataForController_t controllerData;
     // Make the buttons zero
-    controllerData.buttonXOn = 0;
+    controllerData.buttonBOn = 0;
     controllerData.buttonAOn = 0;
     controllerData.buttonYOn = 0;
-    controllerData.buttonBOn = 0;
+    controllerData.buttonXOn = 0;
     controllerData.buttonL1On = 0;
-    controllerData.buttonL2On = 0;
-    controllerData.l3On = 0;
     controllerData.buttonR1On = 0;
+    controllerData.buttonL2On = 0;
     controllerData.buttonR2On = 0;
-    controllerData.r3On = 0;
-    controllerData.dpadLeftOn = 0;
-    controllerData.dpadUpOn = 0;
-    controllerData.dpadRightOn = 0;
-    controllerData.dpadDownOn = 0;  
+
     controllerData.buttonSelectOn = 0;
     controllerData.buttonStartOn = 0;
-    controllerData.homeOn = 0;
+    controllerData.dpadUpOn = 0;
+    controllerData.dpadDownOn = 0;  
+    controllerData.dpadLeftOn = 0;
+    controllerData.dpadRightOn = 0;
+    controllerData.keypad1On = 0;
+    controllerData.keypad2On = 0;
+    
+    controllerData.keypad3On = 0;
+    controllerData.keypad4On = 0;
+    controllerData.keypad5On = 0;
+    controllerData.keypad6On = 0;
+    controllerData.keypad7On = 0;
+    controllerData.keypad8On = 0;
+    controllerData.keypad9On = 0;
+    controllerData.keypadCOn = 0;
+    
+    controllerData.keypad0On = 0;
+    controllerData.keypadEOn = 0;
+    
     //Set the sticks to 128 - centered
     controllerData.leftStickX = 128;
     controllerData.leftStickY = 128;

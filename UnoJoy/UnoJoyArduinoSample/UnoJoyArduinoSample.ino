@@ -20,6 +20,14 @@ void setupPins(void){
     pinMode(i, INPUT);
     digitalWrite(i, HIGH);
   }
+  pinMode(A0, INPUT);
+  digitalWrite(A0, HIGH);
+  pinMode(A1, INPUT);
+  digitalWrite(A1, HIGH);
+  pinMode(A2, INPUT);
+  digitalWrite(A2, HIGH);
+  pinMode(A3, INPUT);
+  digitalWrite(A3, HIGH);
   pinMode(A4, INPUT);
   digitalWrite(A4, HIGH);
   pinMode(A5, INPUT);
@@ -37,23 +45,35 @@ dataForController_t getControllerData(void){
   // Since our buttons are all held high and
   //  pulled low when pressed, we use the "!"
   //  operator to invert the readings from the pins
-  controllerData.buttonXOn = !digitalRead(2);
+  controllerData.buttonBOn = !digitalRead(2);
   controllerData.buttonAOn = !digitalRead(3);
   controllerData.buttonYOn = !digitalRead(4);
-  controllerData.buttonBOn = !digitalRead(5);
-  controllerData.dpadUpOn = !digitalRead(6);
-  controllerData.dpadDownOn = !digitalRead(7);
-  controllerData.dpadLeftOn = !digitalRead(8);
-  controllerData.dpadRightOn = !digitalRead(9);
-  controllerData.buttonL1On = !digitalRead(10);
-  controllerData.buttonR1On = !digitalRead(11);
-  controllerData.buttonSelectOn = !digitalRead(12);
-  controllerData.buttonStartOn = !digitalRead(A4);
-  controllerData.homeOn = !digitalRead(A5);
+  controllerData.buttonXOn = !digitalRead(5);
+  controllerData.buttonL1On = !digitalRead(6);
+  controllerData.buttonR1On = !digitalRead(7);
+  controllerData.buttonL2On = !digitalRead(8);
+  controllerData.buttonR2On = !digitalRead(9);
   
-  controllerData.keypad1On = !digitalRead(9);
-  controllerData.keypad2On = !digitalRead(10);
-  controllerData.keypad3On = !digitalRead(11);
+  controllerData.buttonSelectOn = !digitalRead(10);
+  controllerData.buttonStartOn = !digitalRead(11);
+  controllerData.dpadUpOn = !digitalRead(A0);
+  controllerData.dpadDownOn = !digitalRead(A1);
+  controllerData.dpadLeftOn = !digitalRead(A2);
+  controllerData.dpadRightOn = !digitalRead(A3);
+  controllerData.keypad1On = !digitalRead(2);
+  controllerData.keypad2On = !digitalRead(3);
+  
+  controllerData.keypad3On = !digitalRead(4);
+  controllerData.keypad4On = !digitalRead(5);
+  controllerData.keypad5On = !digitalRead(6);
+  controllerData.keypad6On = !digitalRead(7);
+  controllerData.keypad7On = !digitalRead(8);
+  controllerData.keypad8On = !digitalRead(9);
+  controllerData.keypad9On = !digitalRead(10);
+  controllerData.keypadCOn = !digitalRead(11);
+  
+  controllerData.keypad0On = !digitalRead(12);
+  controllerData.keypadEOn = !digitalRead(A0);
   
   // Set the analog sticks
   //  Since analogRead(pin) returns a 10 bit value,

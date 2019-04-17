@@ -15,28 +15,35 @@
 
 	typedef struct dataForController_t
 	{
-		uint8_t buttonXOn : 1;  // variables to abstractly tell us which buttons are pressed		
+		uint8_t buttonBOn : 1;
 		uint8_t buttonAOn : 1;
 		uint8_t buttonYOn : 1;
-		uint8_t buttonBOn : 1;
+		uint8_t buttonXOn : 1;  // variables to abstractly tell us which buttons are pressed		
 		uint8_t buttonL1On : 1;
-		uint8_t buttonL2On : 1;
-		uint8_t l3On : 1;
 		uint8_t buttonR1On : 1;
-		
+		uint8_t buttonL2On : 1;
 		uint8_t buttonR2On : 1;
-		uint8_t r3On : 1;
+		
 		uint8_t buttonSelectOn : 1;
 		uint8_t buttonStartOn : 1;
-		uint8_t homeOn : 1;
-		uint8_t dpadLeftOn : 1;
-		uint8_t dpadUpOn : 1;
-		uint8_t dpadRightOn : 1;
-		
-		uint8_t dpadDownOn : 1;
 		uint8_t keypad1On : 1;
 		uint8_t keypad2On : 1;
 		uint8_t keypad3On : 1;
+		uint8_t keypad4On : 1;
+		uint8_t keypad5On : 1;
+		uint8_t keypad6On : 1;
+		
+		uint8_t keypad7On : 1;
+		uint8_t keypad8On : 1;
+		uint8_t keypad9On : 1;
+		uint8_t keypadCOn : 1;
+		uint8_t keypad0On : 1;
+		uint8_t keypadEOn : 1;
+		uint8_t dpadUpOn : 1;
+		uint8_t dpadDownOn : 1;
+		
+		uint8_t dpadLeftOn : 1;
+		uint8_t dpadRightOn : 1;
 		
 		uint8_t leftStickX : 8; 
 		uint8_t leftStickY : 8;

@@ -136,12 +136,12 @@ static const uint8_t PROGMEM gamepad_hid_report_desc[] = {
 	0x35, 0x00,        //   PHYSICAL_MINIMUM (0)
 	0x45, 0x01,        //   PHYSICAL_MAXIMUM (1)
 	0x75, 0x01,        //   REPORT_SIZE (1)
-	0x95, 0x0f,        //   REPORT_COUNT (13)
+	0x95, 0x16,        //   REPORT_COUNT (13)  BUTTON COUNT
 	0x05, 0x09,        //   USAGE_PAGE (Button)
 	0x19, 0x01,        //   USAGE_MINIMUM (Button 1)
-	0x29, 0x0f,        //   USAGE_MAXIMUM (Button 13)
+	0x29, 0x16,        //   USAGE_MAXIMUM (Button 13)  BUTTON COUNT
 	0x81, 0x02,        //   INPUT (Data,Var,Abs)
-	0x95, 0x01,        //   REPORT_COUNT (3)
+	0x95, 0x02,        //   REPORT_COUNT (3)   EMPTY BITS in FINAL BYTE
 	0x81, 0x01,        //   INPUT (Cnst,Ary,Abs)
 	0x05, 0x01,        //   USAGE_PAGE (Generic Desktop)
 	0x25, 0x07,        //   LOGICAL_MAXIMUM (7)
@@ -282,6 +282,8 @@ static const gamepad_state_t PROGMEM gamepad_idle_state = {
 	.buttonX_btn = 0, .buttonY_btn = 0, .buttonB_btn = 0, .buttonA_btn = 0,
 	.buttonL1_btn = 0, .buttonR1_btn = 0, .buttonL2_btn = 0, .buttonR2_btn = 0,
 	.buttonSelect_btn = 0, .buttonStart_btn = 0, .keypad1_btn = 0, .keypad2_btn = 0, .keypad3_btn = 0,
+	.keypad4_btn = 0, .keypad5_btn = 0, .keypad6_btn = 0, .keypad7_btn = 0,
+	.keypad8_btn = 0,.keypad9_btn = 0,.keypadC_btn = 0,.keypad0_btn = 0,.keypadE_btn = 0,
 	.direction = 0x08,
 	.l_x_axis = 0x80, .l_y_axis = 0x80, .r_x_axis = 0x80, .r_y_axis = 0x80,
 	.up_axis = 0x00, .right_axis = 0x00, .down_axis = 0x00, .left_axis = 0x00,
@@ -352,10 +354,10 @@ inline void usb_gamepad_reset_state(void) {
 //  a return code (zero if no problems, one if problems
 int8_t sendPS3Data(dataForController_t btnList){
 	
-	gamepad_state.buttonX_btn = btnList.buttonXOn;//Button 4
-	gamepad_state.buttonY_btn = btnList.buttonYOn;	
 	gamepad_state.buttonB_btn = btnList.buttonBOn;
 	gamepad_state.buttonA_btn = btnList.buttonAOn;
+	gamepad_state.buttonY_btn = btnList.buttonYOn;
+	gamepad_state.buttonX_btn = btnList.buttonXOn;//Button 4
 
 	gamepad_state.buttonL1_btn = btnList.buttonL1On;
 	gamepad_state.buttonR1_btn = btnList.buttonR1On;
@@ -405,15 +407,19 @@ int8_t sendPS3Data(dataForController_t btnList){
 		
 	gamepad_state.buttonSelect_btn = btnList.buttonSelectOn;
 	gamepad_state.buttonStart_btn = btnList.buttonStartOn;
-	//gamepad_state.l3_btn = btnList.l3On;
-	//gamepad_state.r3_btn = btnList.r3On;
 	
-	//gamepad_state.r2_btn_alt = btnList.r2On;
-	//gamepad_state.l2_btn_alt = btnList.l2On;
-	//gamepad_state.ps_btn = btnList.homeOn;
 	gamepad_state.keypad1_btn = btnList.keypad1On;
 	gamepad_state.keypad2_btn = btnList.keypad2On;
 	gamepad_state.keypad3_btn = btnList.keypad3On;
+	gamepad_state.keypad4_btn = btnList.keypad4On;
+	gamepad_state.keypad5_btn = btnList.keypad5On;
+	gamepad_state.keypad6_btn = btnList.keypad6On;
+	gamepad_state.keypad7_btn = btnList.keypad7On;
+	gamepad_state.keypad8_btn = btnList.keypad8On;
+	gamepad_state.keypad9_btn = btnList.keypad9On;
+	gamepad_state.keypadC_btn = btnList.keypadCOn;
+	gamepad_state.keypad0_btn = btnList.keypad0On;
+	gamepad_state.keypadE_btn = btnList.keypadEOn;
 
 	// digital direction, use the dir_* constants(enum)
 	// 8 = center, 0 = up, 1 = up/right, 2 = right, 3 = right/down

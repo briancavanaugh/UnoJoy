@@ -19,9 +19,9 @@ uint8_t usb_configured(void);		// is the USB port configured
 typedef struct {
 	// digital buttons, 0 = off, 1 = on
 
-	uint8_t buttonY_btn : 1;
 	uint8_t buttonB_btn : 1;
 	uint8_t buttonA_btn : 1;
+	uint8_t buttonY_btn : 1;
 	uint8_t buttonX_btn : 1;
 
 	uint8_t buttonL1_btn : 1;
@@ -31,16 +31,21 @@ typedef struct {
 
 	uint8_t buttonSelect_btn : 1;
 	uint8_t buttonStart_btn : 1;
-	//uint8_t l3_btn : 1;
-	//uint8_t r3_btn : 1;
-	
-	//uint8_t ps_btn : 1;
-//	uint8_t l2_btn_alt : 1;
-	
-//	uint8_t r2_btn_alt : 1;
 	uint8_t keypad1_btn : 1;
 	uint8_t keypad2_btn : 1;
+	
 	uint8_t keypad3_btn : 1;
+	uint8_t keypad4_btn : 1;
+	uint8_t keypad5_btn : 1;	
+	uint8_t keypad6_btn : 1;
+	
+	uint8_t keypad7_btn : 1;
+	uint8_t keypad8_btn : 1;
+	uint8_t keypad9_btn : 1;
+	uint8_t keypadC_btn : 1;
+	
+	uint8_t keypad0_btn : 1;
+	uint8_t keypadE_btn : 1;
 	uint8_t : 2;
 
 	// digital direction, use the dir_* constants(enum)
