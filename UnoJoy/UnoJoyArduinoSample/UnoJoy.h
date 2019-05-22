@@ -68,10 +68,10 @@
                                  //  This saves a lot of space for our type!
 		uint8_t buttonSelectOn : 1;
 		uint8_t buttonStartOn : 1;
-		uint8_t dpadLeftOn : 1;
 		uint8_t dpadUpOn : 1;
+    uint8_t dpadDownOn : 1;
+    uint8_t dpadLeftOn : 1;
 		uint8_t dpadRightOn : 1;
-		uint8_t dpadDownOn : 1;
 		uint8_t keypad1On : 1;
     uint8_t keypad2On : 1;
 
@@ -86,7 +86,7 @@
     
     uint8_t keypad0On : 1;
     uint8_t keypadEOn : 1;
-    uint8_t padding : 6;     // We end with 7 bytes of padding to make sure we get our data aligned in bytes
+    uint8_t padding : 6;     // We end with 6 bytes of padding to make sure we get our data aligned in bytes
                                  
 		uint8_t leftStickX : 8;  // Each of the analog stick values can range from 0 to 255
 		uint8_t leftStickY : 8;  //  0 is fully left or up
@@ -164,6 +164,7 @@
     //  firmware for the ATmega8u2 as well.  250,000 is actually the best rate,
     //  but it's not supported on Macs, breaking the processing debugger.
     Serial.begin(38400);
+//    Serial.begin(9600);
     
     // Now set up the Timer 0 compare register A
     //  so that Timer0 (used for millis() and such)
@@ -206,11 +207,11 @@
     }
   }
   
-  // Returns a zeroed out (joysticks centered) 
-  //  dataForController_t variable
+  // Returns a zeroed out (joysticks centered) dataForController_t variable
   dataForController_t getBlankDataForController(void){
     // Create a dataForController_t
     dataForController_t controllerData;
+
     // Make the buttons zero
     controllerData.buttonBOn = 0;
     controllerData.buttonAOn = 0;
@@ -247,6 +248,7 @@
     controllerData.leftStickY = 128;
     controllerData.rightStickX = 128;
     controllerData.rightStickY = 128;
+    
     // And return the data!
     return controllerData;
   }
