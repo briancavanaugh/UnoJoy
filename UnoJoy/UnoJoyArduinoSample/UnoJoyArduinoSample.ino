@@ -14,6 +14,22 @@ byte colPins[COLS] = {12, 11, 10}; //connect to the column pinouts of the kpd
 bool keyState[13];
 
 Keypad kpd = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+////////////////////////////////////////////////////////////////
+
+const byte BUTTON_ROWS = 4; //four rows
+const byte BUTTON_COLS = 4; //four columns
+char buttons[BUTTON_ROWS][BUTTON_COLS] = {
+{'Q','W','E','R'},
+{'A','S','D','F'},
+{'Z','X','C','V'},
+{'T','Y','U','I'}
+};
+byte buttonRowPins[BUTTON_ROWS] = {A3,A2,A1,A0}; //connect to the row pinouts of the kpd
+byte buttonColPins[BUTTON_COLS] = {5, 4, 3, 2 }; //connect to the column pinouts of the kpd
+bool buttonState[17];
+
+Keypad buttonMatrix = Keypad( makeKeymap(buttons), buttonRowPins, buttonColPins, BUTTON_ROWS, BUTTON_COLS );
+//////////////////////////////////////////////////////////////////////
 
 void setup(){
   setupPins();
@@ -21,6 +37,9 @@ void setup(){
 
   for (int i=0; i<=12; i++){
     keyState[i] = false;
+  }
+  for (int i=0; i<=15; i++){
+    buttonState[i] = false;
   }
 }
 
@@ -151,6 +170,126 @@ dataForController_t getControllerData(void){
     }
   }
 
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+if (buttonMatrix.getKeys())
+  {
+    for (int i = 0; i < LIST_MAX; i++) // Scan the whole keypad.
+    {
+      if ( buttonMatrix.key[i].stateChanged )   // Only find keys that have changed state.
+      {
+        switch (buttonMatrix.key[i].kstate) {
+          case PRESSED:
+            switch (buttonMatrix.key[i].kchar){
+              case 'Z':
+              buttonState[1] = true;
+              break;
+              case 'X':
+              buttonState[2] = true;
+              break;
+              case 'A':
+              buttonState[3] = true;
+              break;
+              case 'S':
+              buttonState[4] = true;
+              break;
+              case 'C':
+              buttonState[5] = true;
+              break;
+              case 'V':
+              buttonState[6] = true;
+              break;
+              case 'D':
+              buttonState[7] = true;
+              break;
+              case 'F':
+              buttonState[8] = true;
+              break;
+              case 'Q':
+              buttonState[9] = true;
+              break;
+              case 'W':
+              buttonState[10] = true;
+              break;
+              case 'T':
+              buttonState[11] = true;
+              break;
+              case 'Y':
+              buttonState[12] = true;
+              break;
+              case 'U':
+              buttonState[13] = true;
+              break;
+              case 'I':
+              buttonState[14] = true;
+              break;
+            }
+            break;
+          case RELEASED:
+            switch (buttonMatrix.key[i].kchar){
+              case 'Z':
+              buttonState[1] = false;
+              break;
+              case 'X':
+              buttonState[2] = false;
+              break;
+              case 'A':
+              buttonState[3] = false;
+              break;
+              case 'S':
+              buttonState[4] = false;
+              break;
+              case 'C':
+              buttonState[5] = false;
+              break;
+              case 'V':
+              buttonState[6] = false;
+              break;
+              case 'D':
+              buttonState[7] = false;
+              break;
+              case 'F':
+              buttonState[8] = false;
+              break;
+              case 'Q':
+              buttonState[9] = false;
+              break;
+              case 'W':
+              buttonState[10] = false;
+              break;
+              case 'T':
+              buttonState[11] = false;
+              break;
+              case 'Y':
+              buttonState[12] = false;
+              break;
+              case 'U':
+              buttonState[13] = false;
+              break;
+              case 'I':
+              buttonState[14] = false;
+              break;
+            }
+            break;
+        }
+      }
+    }
+  }
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  controllerData.buttonBOn = buttonState[1];
+  controllerData.buttonAOn = buttonState[2];
+  controllerData.buttonYOn = buttonState[3];
+  controllerData.buttonXOn = buttonState[4];
+  controllerData.buttonL1On = buttonState[5];
+  controllerData.buttonR1On = buttonState[6];
+  controllerData.buttonL2On = buttonState[7];
+  controllerData.buttonR2On = buttonState[8];
+  controllerData.buttonSelectOn = buttonState[9];
+  controllerData.buttonStartOn = buttonState[10];
+  controllerData.dpadUpOn = buttonState[11];
+  controllerData.dpadDownOn = buttonState[12];
+  controllerData.dpadLeftOn = buttonState[13];
+  controllerData.dpadRightOn = buttonState[14];
   controllerData.keypad1On = keyState[1];
   controllerData.keypad2On = keyState[2];
   controllerData.keypad3On = keyState[3];
