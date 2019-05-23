@@ -210,10 +210,10 @@ int main(void) {
 		
 		dataToSend.buttonSelectOn = 1 & (buttonData2 >> 0);
 		dataToSend.buttonStartOn = 1 & (buttonData2 >> 1);
-		dataToSend.dpadLeftOn = 1 & (buttonData2 >> 2);
-		dataToSend.dpadUpOn = 1 & (buttonData2 >> 3);
-		dataToSend.dpadRightOn = 1 & (buttonData2 >> 4);		
-		dataToSend.dpadDownOn = 1 & (buttonData2 >> 5);
+		dataToSend.dpadUpOn = 1 & (buttonData2 >> 2);
+		dataToSend.dpadDownOn = 1 & (buttonData2 >> 3);
+		dataToSend.dpadLeftOn = 1 & (buttonData2 >> 4);
+		dataToSend.dpadRightOn = 1 & (buttonData2 >> 5);
 		dataToSend.keypad1On = 1 & (buttonData2 >> 6);
 		dataToSend.keypad2On = 1 & (buttonData2 >> 7);
 		
