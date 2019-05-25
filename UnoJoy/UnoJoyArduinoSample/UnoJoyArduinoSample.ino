@@ -24,8 +24,8 @@ char buttons[BUTTON_ROWS][BUTTON_COLS] = {
 {'Z','X','C','V'},
 {'T','Y','U','I'}
 };
-byte buttonRowPins[BUTTON_ROWS] = {A3,A2,A1,A0}; //connect to the row pinouts of the kpd
-byte buttonColPins[BUTTON_COLS] = {5, 4, 3, 2 }; //connect to the column pinouts of the kpd
+byte buttonRowPins[BUTTON_ROWS] = {A0,A1,A2,A3}; //connect to the row pinouts of the kpd
+byte buttonColPins[BUTTON_COLS] = {2, 3, 4, 5 }; //connect to the column pinouts of the kpd
 bool buttonState[17];
 
 Keypad buttonMatrix = Keypad( makeKeymap(buttons), buttonRowPins, buttonColPins, BUTTON_ROWS, BUTTON_COLS );
